@@ -1,0 +1,27 @@
+name: "Agent Alpha Dolly Grok Action"
+description: "Use Grok (xAI) for PR reviews and issue triage"
+author: "Agent Alpha Dolly"
+
+branding:
+  icon: "cpu"
+  color: "purple"
+
+inputs:
+  xai-api-key:
+    description: "xAI API key"
+    required: true
+  github-token:
+    description: "GitHub token with write access to issues/PRs"
+    required: true
+  mode:
+    description: "auto | review | triage"
+    required: false
+    default: "auto"
+  model:
+    description: "Grok model name"
+    required: false
+    default: "grok-3"
+
+runs:
+  using: "node20"
+  main: "dist/index.js"
